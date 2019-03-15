@@ -6,14 +6,20 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
+    private ArrayList<Integer> lista= new ArrayList<Integer>();
     private ImageView img1,img2,img3,img4,img5,img6,img7,img8,img9;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        lista.add(R.drawable.paisaje1);
 
         img1=findViewById(R.id.ima1);
         img2=findViewById(R.id.ima2);
@@ -42,37 +48,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v){
-        int viewId = v.getId();
-        Log.i("id",viewId+"");
-        switch (viewId){
-            case R.id.ima1:
-                img1.setImageResource(R.drawable.magunas);
-                break;
-            case R.id.ima2:
-                img2.setImageResource(R.drawable.magunas);
-                break;
-            case R.id.ima3:
-                img3.setImageResource(R.drawable.magunas);
-                break;
-            case R.id.ima4:
-                img4.setImageResource(R.drawable.magunas);
-                break;
-            case R.id.ima5:
-                img5.setImageResource(R.drawable.magunas);
-                break;
-            case R.id.ima6:
-                img6.setImageResource(R.drawable.magunas);
-                break;
-            case R.id.ima7:
-                img7.setImageResource(R.drawable.magunas);
-                break;
-            case R.id.ima8:
-                img8.setImageResource(R.drawable.magunas);
-                break;
-            case R.id.ima9:
-                img9.setImageResource(R.drawable.magunas);
-                break;
+        ImageView imagen = findViewById(v.getId());
+        Random rand = new Random();
+        int num = (int)rand.nextInt(lista.size());
+        imagen.setImageResource(lista.get(num));
 
-        }
     }
 }
