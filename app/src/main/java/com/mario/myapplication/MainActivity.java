@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         lista.add(R.drawable.paisaje1);
+        lista.add(R.drawable.magunas);
+        lista.add(R.drawable.pampa);
 
         img1=findViewById(R.id.ima1);
         img2=findViewById(R.id.ima2);
